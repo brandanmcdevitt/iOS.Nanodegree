@@ -5,7 +5,7 @@
 #### Core Curriculum
 * Learn Swift Programming
 * Intro to iOS App Development with Swift
-  * Project: Pitch Perfect
+  * Project: [Pitch Perfect](https://github.com/brandanmcdevitt/iOS.Nanodegree/tree/master/Project%2001%20Pitch%20Perfect)
 * UIKit Fundamentals
   * Project: MemeMe 1.0
   * Project: MemeMe 2.0
