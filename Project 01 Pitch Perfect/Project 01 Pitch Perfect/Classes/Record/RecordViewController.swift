@@ -19,7 +19,6 @@ class RecordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         stopButton.isEnabled = false
-        recordingLabel.alpha = 0
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,11 +30,7 @@ class RecordViewController: UIViewController {
     }
 
     @IBAction func record(_: UIButton) {
-        self.recordButton.isEnabled = false
-        self.stopButton.isEnabled = true
-        UIView.animate(withDuration: 0.5) {
-            self.recordingLabel.alpha = 1
-        }
+        configureUI(recording: true)
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
@@ -53,14 +48,18 @@ class RecordViewController: UIViewController {
     }
     
     @IBAction func stop(_: UIButton) {
-        self.recordButton.isEnabled = true
-        self.stopButton.isEnabled = false
-        UIView.animate(withDuration: 0.2) {
-            self.recordingLabel.alpha = 0
-        }
+        configureUI(recording: false)
         audioRecorder?.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
+    }
+    
+    func configureUI(recording: Bool) {
+        // when you set recording as true, this will assign the first value to true and the second to false (i.e. !true or not true)
+        stopButton.isEnabled = recording
+        recordButton.isEnabled = !recording
+        // here, you're changing the the label text based on the value of the recording parameter, if it's true, the first string is applied otherwise, the second string is applied.
+        recordingLabel.text = recording ? "Recording in Progress..." : "Tap to Record"
     }
 }
 

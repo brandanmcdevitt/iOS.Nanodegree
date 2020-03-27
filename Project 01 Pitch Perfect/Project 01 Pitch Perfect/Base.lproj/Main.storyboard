@@ -24,7 +24,7 @@
                                     <action selector="record:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e8U-xq-53k"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording in progress..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyz-2d-B6N">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyz-2d-B6N">
                                 <rect key="frame" x="116" y="482.66666666666669" width="182" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="182" id="wHW-S0-6To"/>
