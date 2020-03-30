@@ -8,7 +8,7 @@
   * Project: [Pitch Perfect](https://github.com/brandanmcdevitt/iOS.Nanodegree/tree/master/Project%2001%20Pitch%20Perfect)
 * UIKit Fundamentals
   * Project: [MemeMe 1.0](https://github.com/brandanmcdevitt/iOS.Nanodegree/tree/master/Project%2002%20MemeMe%201.0)
-  * Project: MemeMe 2.0
+  * Project: [MemeMe 2.0](https://github.com/brandanmcdevitt/iOS.Nanodegree/tree/master/Project%2003%20MemeMe%202.0)
 * Network Requests and GCD
   * Project: On the Map
 * Data Persistence
