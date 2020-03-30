@@ -15,6 +15,7 @@ class MemeViewController: UIViewController {
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
+    @IBOutlet weak var cancelButton: UIButton!
     
     private let textAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
@@ -70,8 +71,6 @@ class MemeViewController: UIViewController {
     
     @IBAction func share(_ sender: UIButton) {
         let activityController = UIActivityViewController(activityItems: [generateMemedImage()], applicationActivities: nil)
-        // exclude save to camera roll since we manual save anyway
-        activityController.excludedActivityTypes = [.saveToCameraRoll]
         activityController.completionWithItemsHandler = { activity, success, items, error in
             if success {
                 self.save()
@@ -95,6 +94,8 @@ class MemeViewController: UIViewController {
     
     func generateMemedImage() -> UIImage {
         toolbar.isHidden = true
+        cancelButton.isHidden = true
+        actionButton.isHidden = true
         
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
@@ -102,8 +103,13 @@ class MemeViewController: UIViewController {
         UIGraphicsEndImageContext()
         
         toolbar.isHidden = false
+        cancelButton.isHidden = false
+        actionButton.isHidden = false
 
         return memedImage
+    }
+    @IBAction func cancelEdit(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 }
 

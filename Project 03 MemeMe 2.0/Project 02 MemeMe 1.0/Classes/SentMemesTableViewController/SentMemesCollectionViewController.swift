@@ -73,9 +73,22 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: self)
+    }
+    
     private func updateLabels(labels: [UILabel]) {
         labels.forEach {
             $0.sizeToFit()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if  segue.identifier == "showDetail" {
+            if let indexPath = collectionView.indexPathsForSelectedItems?.first {
+                let destinationVC = segue.destination as! MemeDetailViewController
+                destinationVC.meme = memes[indexPath.item].memeImage
+            }
         }
     }
 }
