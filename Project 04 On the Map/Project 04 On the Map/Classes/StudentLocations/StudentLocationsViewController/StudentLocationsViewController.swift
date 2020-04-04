@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  StudentLocationsViewController.swift
 //  Project 04 On the Map
 //
 //  Created by Brandan McDevitt on 01/04/2020.
@@ -7,14 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
-class ViewController: UIViewController {
-
+class StudentLocationsViewController: UIViewController, MKMapViewDelegate {
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-
